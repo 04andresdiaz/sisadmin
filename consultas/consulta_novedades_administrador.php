@@ -1,4 +1,4 @@
-<?php 
+<?php
 require ("../global/conexion.php");
 session_start();
 if (isset($_SESSION['id_usuario'])) {
@@ -7,12 +7,12 @@ if (isset($_SESSION['id_usuario'])) {
 	if ($respuesta = mysqli_fetch_array($consulta)) {
 		$_SESSION['nombre'] = $respuesta['nombre'];
 		$_SESSION['rol'] = $respuesta['rol'];
-		$foto = $respuesta['foto'];	
+		$foto = $respuesta['foto'];
 
-		$consulta_novedad= $conexion -> query("SELECT * FROM novedades ORDER BY fecha DESC, hora DESC");	
+		$consulta_novedad= $conexion -> query("SELECT * FROM novedades ORDER BY fecha DESC, hora DESC");
 
 	}
-}	
+}
 ?>
 <!DOCTYPE html>
  <html lang="en">
@@ -30,7 +30,7 @@ if (isset($_SESSION['id_usuario'])) {
 			var cellsOfRow="";
 			var found=false;
 			var compareWith="";
-			
+
 			// Recorre todas las filas con contenido de la tabla
 			for (var i = 1; i < tableReg.rows.length; i++)
 			{
@@ -57,7 +57,7 @@ if (isset($_SESSION['id_usuario'])) {
 			}
 		}
 	</script>
- 
+
  </head>
  <body>
  	<div class="mensajes"></div>
@@ -71,28 +71,24 @@ if (isset($_SESSION['id_usuario'])) {
 			<td>casa</td>
 			<td>Tipo de novedad</td>
 			<td>Respuesta</td>
-			
+
 		</tr>
 		<tr>
-		<?php 
+		<?php
 			while ($res = mysqli_fetch_row($consulta_novedad)) {
 
 				$consulta_tnovedad = $conexion -> query("SELECT * FROM tipo_novedad WHERE id = '".$res[5]."' ");
 							if ($respuesta_tn = mysqli_fetch_array($consulta_tnovedad)) {
-									$nombre = $respuesta_tn['nombre'];			
+									$nombre = $respuesta_tn['nombre'];
 					}
 
 					$consulta_casaint= $conexion -> query("SELECT * FROM casas WHERE id = '".$res[4]."' ");
 							if ($respuesta_casint = mysqli_fetch_array($consulta_casaint)) {
-									$nombre_casint = $respuesta_casint['nombre'];			
+									$nombre_casint = $respuesta_casint['nombre'];
 					}
 
-
-
-
-
 				echo "
-					
+
 			<td>$res[1]</td>
 			<td>$res[2]</td>
 			<td>$res[3]</td>

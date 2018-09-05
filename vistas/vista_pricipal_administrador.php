@@ -15,6 +15,7 @@ if (isset($_SESSION['id_usuario'])) {
 <head>
 	<meta charset="UTF-8">
 	<link href='../imagenes/ventanalogo.ico' rel='shortcut icon' type='image/x-icon'>
+	<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
  	<link rel="stylesheet" href="../css/css_estilos_vista_principal_administrador.css">
 	<link rel="stylesheet" href="../css/css_estilos_cambiar_perfil.css">
 	<script type="text/javascript" src="../js/jquery.js"></script>
@@ -48,15 +49,15 @@ if (isset($_SESSION['id_usuario'])) {
 		<div class="logo-navegacion logo">
 			<img src="../imagenes/logoletras2.png" alt="logo de sisadmin">
 		</div>
-		<div class="contenedor-items">
-			<ul class='lista'>
-				<li class="items-seleccionado"><img src="../imagenes/inicio.png" alt="Imagen de inicio"><p>Inicio</p></li>
-				<a href="vista_novedad_administrador.php"><li class="items"><img src="../imagenes/novedades.png" alt="Imagen de novedades"><p>Novedades</p></li></a>
-				<a href="vista_registro_personas.php"><li class="items"><img src="../imagenes/registros.png" alt="Imagen de registros"><p>Registros</p></li></a>
-				<a href="vista_reservas_administrador.php"><li class="items"><img src="../imagenes/reservas.png" alt="Imagen de reservas"><p>Reservas</p></li></a>
-				<li class="items"><img src="../imagenes/turnos.png" alt="Imagenes de turnos"><p>Turnos</p></li>
+		<nav class="menu">
+			<ul>
+				<li><svg class="fas fa-cogs"></svg><span>Inicio</span></li>
+				<a href="vista_novedad_administrador.php"><li><svg class="fas fa-chart-line"></svg><span>Novedades</span></li> </a>
+				<a href="vista_registro_personas.php"><li><svg class="fas fa-dolly"></svg><span>Registros</span></li> </a>
+				<a href="vista_reservas_administrador.php"><li><svg class="fas fa-cart-arrow-down"></svg><span>Reservas</span></li> </a>
+				<li><svg class="fas fa-money-bill-alt"></svg><span>Turnos</span></li>
 			</ul>
-		</div>
+		</nav>
 		<div class="menu-opciones">
 			<ul>
 				<a href=""><li>Ayuda</li></a>

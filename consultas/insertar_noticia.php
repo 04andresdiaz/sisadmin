@@ -6,7 +6,7 @@ $descripcion = $_POST['descripcion'];
 ini_set('date.timezone','America/Bogota');
 $fecha= date("Y/m/d");
 $hora=date("g:i A");
-	$Insertar=$conexion->query("INSERT INTO noticias( fecha, hora, titulo, descripcion) VALUES ('".$fecha."', '".$hora."', '".$titulo."','".$descripcion."')");
+	$Insertar=$conexion->query("INSERT INTO noticias (fecha, hora, titulo, descripcion) VALUES ('".$fecha."', '".$hora."', '".$titulo."','".$descripcion."')");
 	if ($Insertar) {
 		echo "Noticia publicada correctamente<br><input type='button' value='continuar' class='e-botones c'></div>";
 	}
@@ -32,4 +32,3 @@ $hora=date("g:i A");
 	}else{
 	header('Location: ../index.php');
 }*/
-

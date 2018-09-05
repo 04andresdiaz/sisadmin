@@ -1,4 +1,4 @@
-<?php 
+<?php
 require ("../global/conexion.php");
 session_start();
 if (isset($_SESSION['id_usuario'])) {
@@ -7,7 +7,7 @@ if (isset($_SESSION['id_usuario'])) {
 	if ($respuesta = mysqli_fetch_array($consulta)) {
 		$nombre = $respuesta['nombre'];
 		$rol = $respuesta['rol'];
-		$foto = $respuesta['foto'];	
+		$foto = $respuesta['foto'];
 	}
 ?>
 <!DOCTYPE html>
@@ -17,6 +17,7 @@ if (isset($_SESSION['id_usuario'])) {
 	<link href='../imagenes/ventanalogo.ico' rel='shortcut icon' type='image/x-icon'>
  	<link rel="stylesheet" href="../css/css_estilos_vista_principal_administrador.css">
 	<link rel="stylesheet" href="../css/css_estilos_cambiar_perfil.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="../js/jquery.js"></script>
 	<script type="text/javascript" src="../js/abriverventanarecuperarcontasena.js"></script>
 	<title>Document</title>
@@ -35,9 +36,9 @@ if (isset($_SESSION['id_usuario'])) {
 					<p>Subir desde tu computador</p>
 				<input type="file" id="subir_foto" name="subir_foto" class="subir_foto" required>
 				</div>
-			</div>		
+			</div>
 			<div class="pie_cambio_perfil">
-				<input type="submit" value="Establecer como foto de perfil" id="enviar_foto" name="enviar_foto"> 
+				<input type="submit" value="Establecer como foto de perfil" id="enviar_foto" name="enviar_foto">
 				<a href="javascript:cerrarVentanaPerfil();"><div class="cancelar"><p>Cancelar</p></div></a>
 			</div>
 		</div>
@@ -48,14 +49,16 @@ if (isset($_SESSION['id_usuario'])) {
 		<div class="logo-navegacion logo">
 			<img src="../imagenes/logoletras2.png" alt="logo de sisadmin">
 		</div>
-		<div class="contenedor-items">
-			<ul class='lista'>
-				<a href="vista_principal_administrador.php"><li class="items-seleccionado"><img src="../imagenes/inicio.png" alt="Imagen de inicio"><p>Inicio</p></li></a>
-				<a href="vista_novedad_administrador.php"><li class="items"><img src="../imagenes/novedades.png" alt="Imagen de novedades"><p>Novedades</p></li></a>
-				<a href="vista_registro_personas.php"><li class="items"><img src="../imagenes/registros.png" alt="Imagen de registros"><p>Registros</p></li></a>
-				<a href="vista_reservas_administrador.php"><li class="items"><img src="../imagenes/reservas.png" alt="Imagen de reservas"><p>Reservas</p></li></a>
-				<a href=""><li class="items"><img src="../imagenes/visitas.png" alt="Imagen de reservas"><p>Visitas</p></li></a>
+		<div class="menumain">
+		<nav class="menu">
+			<ul>
+				<li><svg class="fas fa-home"></svg><span>Inicio</span></li>
+				<a href="vista_novedad_administrador.php"><li><svg class="fas fa-exclamation-triangle"></svg><span>Novedades</span></li> </a>
+				<a href="vista_registro_personas.php"><li><svg class="far fa-sticky-note"></svg><span>Registros</span></li> </a>
+				<a href="vista_reservas_administrador.php"><li><svg class="fas fa-calendar-alt"></svg><span>Reservas</span></li> </a>
+				<li><svg class="fas fa-user-clock"></svg><span>Turnos</span></li>
 			</ul>
+		</nav>
 		</div>
 		<div class="menu-opciones">
 			<ul>
@@ -72,7 +75,7 @@ if (isset($_SESSION['id_usuario'])) {
 				<div class="foto">
 				<a href="javascript:abrirVentanaPerfil();">
 				<div class="configurar_foto">
-				<p class="texto-configurar_foto">Cambiar <br>Forto</p> 
+				<p class="texto-configurar_foto">Cambiar <br>Forto</p>
 			</div></a>
 					<?php echo  "<img class=\"imagen\" src=\""."../perfiles/".$foto."\"/>"; ?>
 				</div>

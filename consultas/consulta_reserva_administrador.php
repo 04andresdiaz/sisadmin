@@ -1,4 +1,4 @@
-<?php 
+<?php
 require ("../global/conexion.php");
 session_start();
 if (isset($_SESSION['id_usuario'])) {
@@ -7,7 +7,7 @@ if (isset($_SESSION['id_usuario'])) {
 	if ($respuesta = mysqli_fetch_array($consulta)) {
 		$_SESSION['nombre'] = $respuesta['nombre'];
 		$_SESSION['rol'] = $respuesta['rol'];
-		$foto = $respuesta['foto'];	
+		$foto = $respuesta['foto'];
 		$consulta_reserva = $conexion -> query("SELECT * FROM reservas ");
 	}
 
@@ -28,7 +28,7 @@ if (isset($_SESSION['id_usuario'])) {
 			var cellsOfRow="";
 			var found=false;
 			var compareWith="";
-			
+
 			// Recorre todas las filas con contenido de la tabla
 			for (var i = 1; i < tableReg.rows.length; i++)
 			{
@@ -68,20 +68,20 @@ if (isset($_SESSION['id_usuario'])) {
 			<td>Motivo</td>
 			<td>Casa</td>
 			<td>Respuesta</td>
-			
+
 		</tr>
 		<tr>
 
-		<?php 
-		
+		<?php
+
 		while ($res = mysqli_fetch_array($consulta_reserva)) {
 
 			$consulta_casaint= $conexion -> query("SELECT * FROM casas WHERE id = '".$res[5]."' ");
 							if ($respuesta_casint = mysqli_fetch_array($consulta_casaint)) {
-									$nombre_casint = $respuesta_casint['nombre'];			
+									$nombre_casint = $respuesta_casint['nombre'];
 					}
 
-			echo "		
+			echo "
 			<td>$res[1]</td>
 			<td>$res[2]</td>
 			<td>$res[3]</td>
@@ -96,7 +96,7 @@ if (isset($_SESSION['id_usuario'])) {
 </div>
  </body>
  </html>
- <?php 
+ <?php
 }else {
 	header('Location: ../index.php');
 }

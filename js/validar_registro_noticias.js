@@ -15,9 +15,10 @@ $(function(){
 				url: "../consultas/insertar_noticia.php",
 				data: "titulo="+titulo+"&descripcion="+descripcion,
 				success: function(res){
-					$(".correcto").fadeIn(600).html(res).delay(3000).fadeOut(600);
-					 $("#titulo").val("");
-					 $("#descripcion").val("");
+					if (res == 1) {
+						$(".correcto").fadeIn(600).html(res).delay(3000).fadeOut(600);
+						$("#descripcion").val("Informacion Correctamente Publicada");
+					}
 				}
 			})
 		};

@@ -8,21 +8,24 @@
 			if ($respuesta = mysqli_fetch_array($consulta_arrendatario)) {
 				$nombre = $respuesta['nombre'];
 				$rol = $respuesta['rol'];
-				$foto = $respuesta['foto'];	
+				$foto = $respuesta['foto'];
 			}else if ($respuesta = mysqli_fetch_array($consulta_propietarios)) {
 				$nombre = $respuesta['nombre'];
 				$rol = $respuesta['rol'];
-				$foto = $respuesta['foto'];	
+				$foto = $respuesta['foto'];
 			}
-			
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<link href='../imagenes/ventanalogo.ico' rel='shortcut icon' type='image/x-icon'>
- 	<link rel="stylesheet" href="../css/css_estilos_vista_principal_administrador.css">
+  <link rel="stylesheet" href="../css/css_estilos_vista_principal_administrador.css">
+	<link rel="stylesheet" href="../css/css_estilos_cambiar_perfil.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/abriverventanarecuperarcontasena.js"></script>
 	<title>Novedades</title>
 </head>
 <body>
@@ -30,13 +33,15 @@
 		<div class="logo-navegacion logo">
 			<img src="../imagenes/logoletras2.png" alt="logo de sisadmin">
 		</div>
-		<div class="contenedor-items">
-			<ul class='lista'>
-				<a href="vista_principal_usuarios.php"><li class="items"><img src="../imagenes/inicio.png" alt="Imagen de inicio"><p>Inicio</p></li>
-				<a href="vista_registro_novedades.php"><li class="items-seleccionado"><img src="../imagenes/novedades.png" alt="Imagen de novedades"><p>Novedades</p></li></a>
-				<a href="vista_registro_reserva.php"><li class="items"><img src="../imagenes/reservas.png" alt="Imagen de registros"><p>Reservas</p></li></a>
-				<a href="vista_registro_visitas.php"><li class="items"><img src="../imagenes/visitas.png" alt="Imagen de reservas"><p>Visitas</p></li></a>	
+		<div class="menumain">
+		<nav class="menu">
+			<ul>
+				<a href="vista_principal_usuarios.php">	<li><svg class="fas fa-home"></svg><span>Inicio</span></li></a>
+				<a href="vista_registro_novedades.php"><li><svg class="fas fa-exclamation-triangle"></svg><span>Novedades</span></li> </a>
+				<a href="vista_registro_reserva.php"><li><svg class="fas fa-calendar-alt"></svg><span>Reservas</span></li> </a>
+				<a href="vista_registro_visitas.php"><li><svg class="far fa-sticky-note"></svg><span>Visitas</span></li> </a>
 			</ul>
+		</nav>
 		</div>
 		<div class="menu-opciones">
 			<ul>
@@ -65,7 +70,7 @@
 	</div>
 </body>
 </html>
-<?php 
+<?php
 }else{
 	header('Location: ../index.php');
 }
