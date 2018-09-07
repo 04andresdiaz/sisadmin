@@ -21,8 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `sisadmin`
 --
-CREATE DATABASE IF NOT EXISTS `sisadmin` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `sisadmin`;
+CREATE DATABASE sisadmin;
+
 
 -- --------------------------------------------------------
 

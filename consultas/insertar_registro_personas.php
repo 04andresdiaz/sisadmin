@@ -1,4 +1,4 @@
-<?php 
+<?php
 	require ("../global/conexion.php");
 	if (isset($_POST['enviar'])) {
 		$cedula = $_POST['cedula'];
@@ -17,7 +17,7 @@
 			$registrar_arrendatario = $conexion -> query("INSERT INTO arrendatarios (cedula, nombre, telefono, genero, rh, email, contrasena, rol) VALUES ('".$cedula."','".$nombre."','".$telefono."','".$genero."','".$rh."','".$email."','eee','".$rol."')");
 			if ($registrar_arrendatario) {
 				$registrar_relacion_c_a = $conexion -> query("INSERT INTO r_casa_arrendatario(id_casa, id_arrendatario) VALUES ('".$casa."','".$cedula."') ");
-			echo "
+			echo "º
 			<p style='color:#545555; font-family: arial;font-size: 35px;margin-top:150px; margin-left:5%; text-align:center;'>
 			INFORMACIÓN GUARDADA CORRECTAMENTE<br>EN SISADMIN </p>
  			<br>
@@ -38,7 +38,7 @@
 		$direccion_guarda = $_POST['direccion'];
 		$validar_existencia_guarda = $conexion -> query("SELECT cedula FROM guardas WHERE cedula = '".$cedula."'");
 		if (mysqli_num_rows($validar_existencia_guarda)==0) {
-			$registrar_guarda = $conexion -> query("INSERT INTO guardas (cedula, nombre, telefono, genero, rh, email, contrasena, direccion,rol)VALUES 
+			$registrar_guarda = $conexion -> query("INSERT INTO guardas (cedula, nombre, telefono, genero, rh, email, contrasena, direccion,rol)VALUES
 				('".$cedula."','".$nombre."','".$telefono."','".$genero."','".$rh."','".$email."','".$rol."','".$direccion_guarda."','".$rol."')");
 			if ($registrar_guarda) {
 				echo "
@@ -94,7 +94,7 @@
  		text-decoration: none;
  	}
 .botones2{
-	width: 20%; 
+	width: 20%;
 	height: 32px;
 	margin-left: 42%;
 	background: #51c657;
@@ -113,6 +113,6 @@
 }
  	</style>
  </head>
- <body> 	
+ <body>
  </body>
  </html>
